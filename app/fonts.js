@@ -8,6 +8,7 @@ const generalSans = localFont({
 
 const notoSans = Noto_Sans({
     variable: '--font-ns',
+    preload: false,
 });
 
 export {generalSans,notoSans}
