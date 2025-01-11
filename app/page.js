@@ -12,7 +12,7 @@ export default function Home() {
   var [show2,setShow2]=useState(false);
 
   return (
-    <>
+    <div className="page">
     <div id="hero"
     className="bg-[#999d9e] h-screen" 
     >
@@ -35,8 +35,8 @@ export default function Home() {
           <h4 className="designation mt-5 md:mt-20 font-saumyaSans font-normal">Freelance<br/>Developer & Designer</h4>
         </div>
       </div>
-      <div className="absolute bottom-0 mb-[8rem]">
-        <VelocityScroll numRows={1} className="text-white font-saumyaSans font-normal" defaultVelocity={2}>Saumya Talwani &mdash; </VelocityScroll>
+      <div className="absolute bottom-0 mb-[8rem] overflow-x-clip">
+        <VelocityScroll numRows={1} className="text-white w-screen font-saumyaSans font-normal" defaultVelocity={2}>Saumya Talwani &mdash; </VelocityScroll>
       </div>
       
     </div>
@@ -48,8 +48,8 @@ export default function Home() {
         <h1 className="font-noto text-s font-[350] text-[#1c1d20]">Empowering MSMEs to thrive in the digital era. Together, we’ll redefine success and set a new standard—no fluff, just cutting-edge solutions that deliver.</h1>
       </div>
 
-      <div className="font-noto flex mt-[10vh] md:mt-0 md:ml-20 md:block md:max-w-[20vw]">
-        <p className="mb-5 max-w-[50vw] mr-5 md:max-w-none md:mr-0">The combination of my passion for design, code & interaction positions me in a unique place in the web design world.</p>
+      <div className="font-noto flex mt-[10vh] md:mt-0 md:ml-[10rem] md:block md:max-w-[20vw]">
+        <p className="mb-5 max-w-[45vw] md:max-w-none md:mr-0">The combination of my passion for design, code & interaction positions me in a unique place in the web design world.</p>
         <div className="btn-round bg-[#1c1d20] hover:bg-[#455ce9] rounded-full flex items-center justify-center text-white">
           About me
         </div>
@@ -183,25 +183,25 @@ the platform met industry-specific requirements, enhancing efficiency for solar 
       </div>
     </div>
 
-    <div id="footer"
+    <div id="contact"
     className="h-[90vh] bg-[#1c1d20] text-white pt-[10vh] md:pt-[20vh] px-[5vw] md:px-[18vw]">
 
       <h1 
       className="font-saumyaSans md:font-medium max-w-[60vw] md:max-w-[40vw] mb-[10vh] footer-heading">Let's work together</h1>
       
       <hr className="w-[90vw] md:w-[64vw] mt-8 line-bg"/>
-      <div className="btn-round bg-[#455ce9] hover:bg-[#334bd3] rounded-full flex items-center justify-center text-white font-noto mt-[-80] md:mt-[-90] ml-auto mr-10 md:mr-20">
+      <div className="btn-round bg-[#455ce9] hover:bg-[#334bd3] rounded-full flex items-center justify-center text-white font-noto mt-[-80px] md:mt-[-90px] ml-auto mr-10 md:mr-20">
         Get in touch
       </div>
 
       <div className="flex flex-col md:flex-row">
         <Link href={'mailto:saumyatalwani@gmail.com'}>
-        <div className="border-white rounded-[4rem] border-[1px] border-opacity-30 p-5 md:w-[20vw] flex justify-center items-center my-10 hover:bg-[#455ce9] hover:text-white cursor-pointer">
+        <div className="border-white rounded-[4rem] border-[1px] border-opacity-30 p-5 md:w-[20vw] flex justify-center items-center my-10 hover:bg-[#455ce9] hover:text-white cursor-pointer mr-5">
           <h1 className="font-noto font-light">saumyatalwani@gmail.com</h1>
         </div></Link>
         
         <Link href={'tel:+917990735222'}>
-        <div className="md:ml-5 border-white rounded-[4rem] border-[1px] border-opacity-30 p-5 md:w-[15vw] flex justify-center items-center md:my-10 hover:bg-[#455ce9] hover:text-white cursor-pointer">
+        <div className="md:ml-5 border-white rounded-[4rem] border-[1px] border-opacity-30 p-5 md:w-[15vw] flex justify-center items-center md:my-10 hover:bg-[#455ce9] hover:text-white cursor-pointer mr-5">
           <h1 className="font-noto font-light">+91 79907 35222</h1>
         </div></Link>
 
@@ -227,6 +227,6 @@ the platform met industry-specific requirements, enhancing efficiency for solar 
       </div>
       </div>
 
-    </>
+    </div>
   );
 }

@@ -74,13 +74,17 @@ body {
   }
 }
 
+html,body{
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
 body{
     line-height: 1.6;
     font-weight: 350;
     font-style: normal;
     font-size: clamp(16px, 1.2vw, 19px);
-    overflow-x: hidden;
-    overscroll-behavior: none;
 }
 
 .links > a {
