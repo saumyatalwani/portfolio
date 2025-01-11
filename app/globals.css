@@ -77,7 +77,6 @@ body {
 html,body{
   overflow-x: hidden;
   overscroll-behavior: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 body{
@@ -90,8 +89,6 @@ body{
 .links > a {
   @apply mx-5 text-[16px];
 }
-
-::-webkit-scrollbar {display:none;}
 
 .designation{
   color: white;
