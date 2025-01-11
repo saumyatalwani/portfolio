@@ -61,7 +61,7 @@ export default function Home() {
       
     </div>
 
-    <div id="recentWorksDesktop" className="p-10 hidden md:block">
+    <div id="projects" className="p-10 hidden md:block">
       <div>
         <h1 className="ml-[15vw] text-[0.6em] text-[#1c1d20] font-noto opacity-50">RECENT WORK</h1>
 
@@ -149,7 +149,7 @@ the platform met industry-specific requirements, enhancing efficiency for solar 
       </div>
     </div>
 
-    <div id="recentWorksMobile" className="p-10 md:hidden">
+    <div id="projects" className="p-10 md:hidden">
       <div>
         <div className="bg-[#ededed] h-[40vh] flex justify-center items-center">
           <Image src='/solsynk_dashboard.png' height={2000} width={2000} className="w-[70vw]" alt='SolSynk. Dashboard'></Image>
