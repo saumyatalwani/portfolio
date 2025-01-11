@@ -90,6 +90,8 @@ body{
   @apply mx-5 text-[16px];
 }
 
+::-webkit-scrollbar {display:none;}
+
 .designation{
   color: white;
   font-size: clamp(1.55em, 2.3vw, 2.5em);
