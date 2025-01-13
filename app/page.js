@@ -43,7 +43,7 @@ export default async function Home() {
             <Navbar />
             <div className="pt-[15vh] px-[20vw] mb-20 text-red-600 font-saumyaSans">
               {/*Error fetching post data. Please try again later.*/}
-              {error}
+              {JSON.stringify(error)}
             </div>
           </>
         );
