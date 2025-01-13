@@ -22,7 +22,7 @@ export default function About(){
             <div className="md:w-[20vw] mr-[10vw] text-justify">
                 <h2 className="font-saumyaSans">I help companies from all over the world with tailor-made solutions. With each project, I push my work to new horizons, always putting quality first.</h2>
             </div>
-            <div className="w-[80vw] mt-10 md:w-[40vw]">
+            <div className="w-[80vw] mt-10 md:mt-0 md:w-[40vw]">
                 <Image src="/saumya_1.png" alt="Saumya Talwani" height={400} width={400}/>
             </div>
 
