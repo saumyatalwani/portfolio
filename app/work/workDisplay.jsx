@@ -46,23 +46,23 @@ export default function Display(props){
             <div className="mb-20">
                 <Navbar/>
                 
-                <div className="pt-[9vh] md:pt-[18vh] px-[6vw] md:px-[18vw]">
+                <div className="pt-[9vh] md:pt-[18vh] px-[6vw] md:px-[16vw]">
                     <h1 className="text-4xl md:text-[5rem] leading-none font-saumyaSans font-[450] max-w-[75vw] md:max-w-[50vw]">Creating next level digital products</h1>
 
                     <div className="flex w-[88vw] md:w-[64vw] mt-5">
-                        <div className={clsx("font-saumyaSans text-sm rounded-[4rem] p-5 w-[8rem] flex justify-center items-center my-10 cursor-pointer mr-2 md:mr-5",
+                        <div className={clsx("font-saumyaSans text-sm md:text-base rounded-[4rem] p-5 w-[8rem] flex justify-center items-center my-10 cursor-pointer mr-2 md:mr-5",
                         filter!='all' && 'border-[#d7d7d8] border-[1px] hover:bg-[#455ce9] hover:text-white',
                         filter == 'all' && 'bg-black text-white')}
                         onClick={()=>setFilter('all')}>
                             All
                         </div>
-                        <div className={clsx("font-saumyaSans text-sm rounded-[4rem] p-5 w-[16rem] md:w-[12rem] flex justify-center items-center my-10 cursor-pointer mr-2 md:mr-5",
+                        <div className={clsx("font-saumyaSans text-sm md:text-base rounded-[4rem] p-5 w-[16rem] md:w-[12rem] flex justify-center items-center my-10 cursor-pointer mr-2 md:mr-5",
                         filter!='design' && 'border-[#d7d7d8] border-[1px] hover:bg-[#455ce9] hover:text-white',
                         filter == 'design' && 'bg-black text-white')}
                         onClick={()=>setFilter('design')}>
                             Design
                         </div>
-                        <div className={clsx("font-saumyaSans text-sm rounded-[4rem] p-5 w-[16rem] flex justify-center items-center my-10 cursor-pointer",
+                        <div className={clsx("font-saumyaSans text-sm md:text-base rounded-[4rem] p-5 w-[16rem] flex justify-center items-center my-10 cursor-pointer",
                         filter!='development' && 'border-[#d7d7d8] border-[1px] hover:bg-[#455ce9] hover:text-white',
                         filter == 'development' && 'bg-black text-white')}
                         onClick={()=>setFilter('development')}>
