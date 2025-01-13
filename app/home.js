@@ -16,7 +16,7 @@ export default function HomeUI(props){
     >
       <Navbar className={'text-white'}/>
       <div className="flex w-screen justify-center items-center">
-        <Image src='/saumya.png' width={200} height={200} className="h-[85vh] md:h-[95vh] w-auto absolute bottom-[-80] md:bottom-0" alt="Saumya Talwani"/>
+        <Image src='/saumya.png' width={200} height={200} className="h-[80vh] md:h-[95vh] w-auto absolute bottom-0" alt="Saumya Talwani"/>
         <div className="absolute bottom-5 left-10 md:bottom-auto md:static md:mt-40 md:ml-[60vw]">
           <div className="arrow big">
             <svg width="16px" height="16px" viewBox="0 0 14 14" version="1.1">
