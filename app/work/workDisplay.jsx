@@ -46,23 +46,23 @@ export default function Display(props){
             <div className="mb-20">
                 <Navbar/>
                 
-                <div className="pt-[9vh] md:pt-[18vh] px-[9vw] md:px-[18vw]">
-                    <h1 className="text-4xl md:text-[5rem] leading-none font-saumyaSans font-[450] max-w-[70vw] md:max-w-[50vw]">Creating next level digital products</h1>
+                <div className="pt-[9vh] md:pt-[18vh] px-[6vw] md:px-[18vw]">
+                    <h1 className="text-4xl md:text-[5rem] leading-none font-saumyaSans font-[450] max-w-[75vw] md:max-w-[50vw]">Creating next level digital products</h1>
 
-                    <div className="flex w-[82vw] md:w-[64vw] mt-5">
-                        <div className={clsx("font-saumyaSans rounded-[4rem] p-5 w-[8rem] flex justify-center items-center my-10 cursor-pointer mr-5",
+                    <div className="flex w-[88vw] md:w-[64vw] mt-5">
+                        <div className={clsx("font-saumyaSans text-sm rounded-[4rem] p-5 w-[8rem] flex justify-center items-center my-10 cursor-pointer mr-2 md:mr-5",
                         filter!='all' && 'border-[#d7d7d8] border-[1px] hover:bg-[#455ce9] hover:text-white',
                         filter == 'all' && 'bg-black text-white')}
                         onClick={()=>setFilter('all')}>
                             All
                         </div>
-                        <div className={clsx("font-saumyaSans rounded-[4rem] p-5 w-[12rem] flex justify-center items-center my-10 cursor-pointer mr-5",
-                        filter!='design' && 'border-[#d7d7d8] border-[1px] hover:bg-[#455ce9] hover:text-white',
+                        <div className={clsx("font-saumyaSans text-sm rounded-[4rem] p-5 w-[16rem] md:w-[12rem] flex justify-center items-center my-10 cursor-pointer mr-2 md:mr-5",
+                        filter!='design' && 'border-[#d7d7d8] border-[1px] hover:bg-[#0b0c0c] hover:text-white',
                         filter == 'design' && 'bg-black text-white')}
                         onClick={()=>setFilter('design')}>
                             Design
                         </div>
-                        <div className={clsx("font-saumyaSans rounded-[4rem] p-5 w-[16rem] flex justify-center items-center my-10 cursor-pointer mr-5",
+                        <div className={clsx("font-saumyaSans text-sm rounded-[4rem] p-5 w-[16rem] flex justify-center items-center my-10 cursor-pointer",
                         filter!='development' && 'border-[#d7d7d8] border-[1px] hover:bg-[#455ce9] hover:text-white',
                         filter == 'development' && 'bg-black text-white')}
                         onClick={()=>setFilter('development')}>
@@ -86,7 +86,7 @@ export default function Display(props){
                     </div>
                 </div>
                 
-                <div className={clsx(view=='list' && "px-[9vw] md:px-[18vw]",view=='gallery' && "px-[10vw]",'w-screen')}>
+                <div className={clsx(view=='list' && "px-[9vw] md:px-[18vw]",view=='gallery' && "px-[6vw]",'w-screen')}>
 
                     {
                         
@@ -123,7 +123,7 @@ export default function Display(props){
                     </div>  : null }
                 {
                     view == 'gallery' ?
-                    <div className="w-[80vw] mt-5 font-saumyaSans">
+                    <div className="w-[88vw] mt-5 font-saumyaSans">
                         <div className="flex flex-wrap gallery justify-center items-center" >
 
                             {posts.map((post,index)=>{
