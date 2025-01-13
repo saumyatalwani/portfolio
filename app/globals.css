@@ -87,7 +87,7 @@ body{
 }
 
 .links > a {
-  @apply mx-5 text-[16px];
+  @apply mx-2 md:mx-5 text-[16px];
 }
 
 ::-webkit-scrollbar {display:none;}
@@ -118,6 +118,11 @@ body{
   line-height: 1.065;
 }
 
+.about-heading{
+  font-size: calc(clamp(2.75em, 7vw, 8em)* .875);
+  line-height: 1.065;
+}
+
 .line-bg{
   border-color: rgba(255,255,255,0.2);
 }
@@ -128,4 +133,32 @@ body{
   font-size: 0.85em;
   color: #fff;
   font-weight: 300;
+}
+
+.workTable > thead > tr > th{
+  @apply font-light text-[0.7rem] uppercase text-left pb-10;
+}
+
+.workTable  > tbody > tr > td{
+  @apply border-t-[1px] py-10;
+}
+
+.workTable > tbody > tr:last-child{
+  @apply border-b-[1px];
+}
+
+.workTable > tbody > tr > td:first-child{
+  @apply font-medium text-5xl;
+}
+
+.workPage > thead > tr > th{
+  @apply font-light text-[0.7rem] uppercase text-left pb-5 border-b-[1px] text-[#8d8d8f];
+}
+
+.workPage > tbody > tr > td{
+  @apply pt-5 font-saumyaSans
+}
+
+.workPage{
+  @apply mr-5
 }
