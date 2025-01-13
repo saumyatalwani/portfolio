@@ -57,7 +57,7 @@ export default function Display(props){
                             All
                         </div>
                         <div className={clsx("font-saumyaSans text-sm rounded-[4rem] p-5 w-[16rem] md:w-[12rem] flex justify-center items-center my-10 cursor-pointer mr-2 md:mr-5",
-                        filter!='design' && 'border-[#d7d7d8] border-[1px] hover:bg-[#0b0c0c] hover:text-white',
+                        filter!='design' && 'border-[#d7d7d8] border-[1px] hover:bg-[#455ce9] hover:text-white',
                         filter == 'design' && 'bg-black text-white')}
                         onClick={()=>setFilter('design')}>
                             Design
