@@ -43,11 +43,11 @@ export default function HomeUI(props){
     className="p-10 md:flex w-full mt-[5vh] md:mt-[20vh] md:ml-[10vw]"
     >
       <div className="md:max-w-[47vw]">
-        <h1 className="font-noto text-s font-[350] text-[#1c1d20]">Empowering MSMEs to thrive in the digital era. Together, we’ll redefine success and set a new standard—no fluff, just cutting-edge solutions that deliver.</h1>
+        <h1 className="font-noto text-s font-[350] text-[#1c1d20]">Empowering businesses to succeed by providing practical digital solutions.</h1>
       </div>
 
       <div className="font-noto flex mt-[10vh] md:mt-0 md:ml-[10rem] md:block md:max-w-[20vw]">
-        <p className="mb-5 max-w-[45vw] md:max-w-none md:mr-0">The combination of my passion for design, code & interaction positions me in a unique place in the web design world.</p>
+        <p className="mb-5 max-w-[45vw] md:max-w-none md:mr-0">My passion for design, code, and interaction uniquely positions me to create innovative, user-centered solutions that stand out in the design world.</p>
         <Link href={'/about'} className="btn-round bg-[#1c1d20] hover:bg-[#455ce9] rounded-full flex items-center justify-center text-white">
           About me
         </Link>
