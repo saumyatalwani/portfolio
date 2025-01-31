@@ -2,6 +2,47 @@ import Navbar from "@/components/custom/navbar";
 import { getClient } from "@/lib/api";
 import { gql } from "@apollo/client";
 
+export async function generateMetadata({ params }) {
+    const { slug }=await params;
+
+    const query = gql`
+        query GetPost($host: String!, $slug: String!) {
+            publication(host: $host) {
+                post(slug: $slug) {
+                    title
+                }
+            }
+        }
+    `;
+  
+    const variables = {
+        host: "me.techsaumya.in",
+        slug: slug,
+    };
+
+    const client = getClient();
+    let post = null;
+
+    try {
+        const result = await client.query({
+            query,
+            variables,
+            fetchPolicy: "network-only",
+            nextFetchPolicy: "network-only"
+        });
+
+        const { data } = result;
+        post = data.publication.post;
+    } catch (error) {
+        console.error("Error fetching metadata:", error);
+        return { title: "Error - Unable to load metadata" };  // Fallback title
+    }
+
+    return {
+        title: post.title + " | Saumya Talwani",
+    };
+}
+
 export default async function Work({ params }) {
     const {slug}=await params;
 
@@ -38,13 +79,12 @@ export default async function Work({ params }) {
             fetchPolicy: "network-only",
             nextFetchPolicy: "network-only"
           });
-          console.log(getClient().cache.extract());
 
           const { data } = result; 
 
-          console.log(data);
         post = data.publication.post;
         props = post.subtitle.split(",");
+    
     } catch (error) {
         console.error("Error fetching data:", error);
         return (
