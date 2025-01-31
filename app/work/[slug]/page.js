@@ -11,7 +11,9 @@ export default async function Work({ params }) {
                 post(slug: $slug) {
                     title
                     subtitle
-                    
+                    tags{
+                        tagline
+                      }
                     content {
                         html
                     }
@@ -29,7 +31,18 @@ export default async function Work({ params }) {
     let props = null;
 
     try {
-        const { data } = await getClient().query({ query, variables });
+        const client = getClient();
+        const result = await client.query({
+            query,
+            variables,
+            fetchPolicy: "network-only",
+            nextFetchPolicy: "network-only"
+          });
+          console.log(getClient().cache.extract());
+
+          const { data } = result; 
+
+          console.log(data);
         post = data.publication.post;
         props = post.subtitle.split(",");
     } catch (error) {
