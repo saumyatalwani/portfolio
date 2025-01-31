@@ -33,7 +33,7 @@ export default function Footer(){
   
         <div className="float-left ml-10">
           <h1 className="text-[0.6em] font-noto text-[rgba(255,255,255,0.4)]">LOCAL TIME</h1>
-          <h1 className="font-noto mt-2 text-white">{new Date().getHours()} : {new Date().getMinutes()} <span className="hidden md:inline">{new Date().toString().match(/\(([A-Za-z\s].*)\)/)[1]}</span></h1>
+          <h1 className="font-noto mt-2 text-white">{new Date().getHours().toString().padStart(2, '0')} : {new Date().getMinutes().toString().padStart(2, '0')} <span className="hidden md:inline">{new Date().toString().match(/\(([A-Za-z\s].*)\)/)[1]}</span></h1>
         </div>
   
         <div className="float-end md:mr-5">  
