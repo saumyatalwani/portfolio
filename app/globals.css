@@ -162,3 +162,18 @@ body{
 .workPage{
   @apply mr-5
 }
+
+.myContent a { 
+  color: #007bff; 
+  text-decoration: underline;
+}
+
+.myContent a:hover {
+  color: #0056b3 !important;
+  text-decoration: none !important;
+}
+
+.myContent a:visited {
+  color: #334bd3;
+  text-decoration: none;
+}
