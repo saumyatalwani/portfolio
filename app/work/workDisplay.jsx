@@ -47,7 +47,7 @@ export default function Display(props){
                 <Navbar/>
                 
                 <div className="pt-[9vh] md:pt-[18vh] px-[6vw] md:px-[16vw]">
-                    <h1 className="text-4xl md:text-[5rem] leading-none font-saumyaSans font-[450] max-w-[75vw] md:max-w-[50vw]">Creating next level digital products</h1>
+                    <h1 className="text-4xl md:text-[5rem] leading-none font-saumyaSans font-[450] max-w-[75vw] md:max-w-[50vw]">Crafting innovative digital experiences.</h1>
 
                     <div className="flex w-[88vw] md:w-[64vw] mt-5">
                         <div className={clsx("font-saumyaSans text-sm md:text-base rounded-[4rem] p-5 w-[8rem] flex justify-center items-center my-10 cursor-pointer mr-2 md:mr-5",
