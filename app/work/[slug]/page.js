@@ -82,7 +82,7 @@ async function getData(slug) {
 
   try {
     const client = getClient();
-    const result = await client.query({ query, variables, fetchPolicy: "network-only" });
+    const result = await client.query({ query, variables, fetchPolicy: "network-only",context: { fetchOptions: { cache: "no-store" } }, });
     return result.data.publication.post;
   } catch (error) {
     console.error("Error fetching data:", error);
