@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Navbar from "@/components/custom/navbar";
 import { gql } from "@apollo/client";
