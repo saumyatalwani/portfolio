@@ -55,13 +55,13 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="pb-5 bg-[#1c1d20] h-[10vh]">
-        <div className="float-left ml-10">
+      <div className="pb-5 bg-[#1c1d20] min-h-[10vh] flex flex-col md:flex-row md:justify-between md:items-center px-10 gap-4">
+        <div>
           <h1 className="text-[0.6em] font-noto text-[rgba(255,255,255,0.4)]">LOCAL TIME</h1>
           <h1 className="font-noto mt-2 text-white whitespace-pre-wrap">{time}</h1>
         </div>
 
-        <div className="float-end md:mr-5">
+        <div className="md:mr-5">
           <h1 className="text-[0.6em] font-noto text-[rgba(255,255,255,0.4)]">SOCIALS</h1>
           <div className="flex socials mt-2">
             <Link href={'https://www.linkedin.com/in/saumyatalwani/'} target="_blank">
