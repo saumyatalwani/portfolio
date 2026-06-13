@@ -81,7 +81,7 @@ export default async function About() {
     return (
       <>
         <div className="pt-[15vh] pl-[9vw] md:pl-[18vw] mb-20">
-          <h1 className="font-saumyaSans font-[450] mb-[14vh] about-heading md:max-w-[60vw]">
+          <h1 className="font-generalSans font-[450] mb-[14vh] about-heading md:max-w-[60vw]">
             Helping brands thrive in the digital world
           </h1>
 
@@ -111,7 +111,7 @@ export default async function About() {
             </div>
           </div>
 
-          <h1 className="font-saumyaSans font-[450] mb-[5vh] about-heading md:max-w-[60vw] mt-20">
+          <h1 className="font-generalSans font-[450] mb-[10vh] md:mb-[5vh] about-heading md:max-w-[60vw] mt-20">
             Experience
           </h1>
           <div>
