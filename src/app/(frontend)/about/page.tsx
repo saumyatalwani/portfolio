@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import { GlobeIcon } from '@primer/octicons-react'
 import { BriefcaseBusinessIcon } from 'lucide-react'
 import Image from 'next/image'

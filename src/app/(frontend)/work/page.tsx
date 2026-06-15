@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import Display from '@/components/workDisplay'
 import { getPayload } from 'payload'
 import config from '@payload-config'
