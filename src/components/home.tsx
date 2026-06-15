@@ -67,7 +67,7 @@ export default function HomeUI({ data, heroUrl }: { data: Project[]; heroUrl: st
           <p className="my-10 font-light">
             My passion for design, code, and interaction uniquely positions me to create innovative,
             user-centered solutions that stand out in the design world.
-          </p>
+          </p>https://github.com/saumyatalwani
         </div>
 
         <div className="font-noto flex justify-center items-center w-full md:ml-40 md:block md:max-w-[20vw]">
@@ -126,6 +126,7 @@ export default function HomeUI({ data, heroUrl }: { data: Project[]; heroUrl: st
                       width={2000}
                       className="w-[70vw]"
                       alt={project.coverImage.alt}
+                      loading="lazy"
                     ></Image>
                   )}
                 </div>

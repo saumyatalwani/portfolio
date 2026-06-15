@@ -25,7 +25,6 @@ export default async function Home() {
       },
     })
     imageUrl = image.docs[0].url!
-    console.log(imageUrl)
   } catch (error) {
     console.error('Error fetching data:', error)
     return (
