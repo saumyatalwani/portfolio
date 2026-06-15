@@ -6,16 +6,26 @@ import { VelocityScroll } from '@/components/ui/scroll-based-velocity'
 import Link from 'next/link'
 import { Project } from '@/payload-types'
 
-export default function HomeUI({ data, heroUrl }: { data: Project[]; heroUrl: string }) {
+export default function HomeUI({
+  data,
+  heroImage,
+}: {
+  data: Project[]
+  heroImage: {
+    url: string
+    width: number
+    height: number
+  }
+}) {
   return (
     <div className="page">
       <div id="hero" className="relative min-h-screen overflow-hidden bg-[#999d9e]">
         <Navbar className={'text-white'} />
         <div className="flex w-screen justify-center items-center">
           <Image
-            src={heroUrl}
-            width={2000}
-            height={2000}
+            src={heroImage.url}
+            width={heroImage.width / 4}
+            height={heroImage.height / 4}
             preload={true}
             className="h-[80vh] md:h-[95vh] w-auto absolute bottom-0"
             alt="Saumya Talwani"

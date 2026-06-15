@@ -4,7 +4,15 @@ import config from '@payload-config'
 
 export default async function Home() {
   let projects = null
-  let imageUrl = ''
+  let heroImage: {
+    url: string
+    width: number
+    height: number
+  } = {
+    url: '',
+    width: 0,
+    height: 0,
+  }
 
   try {
     const payload = await getPayload({ config })
@@ -24,7 +32,11 @@ export default async function Home() {
         },
       },
     })
-    imageUrl = image.docs[0].url!
+    heroImage = {
+      url: image.docs[0].url!,
+      width: image.docs[0].width!,
+      height: image.docs[0].height!,
+    }
   } catch (error) {
     console.error('Error fetching data:', error)
     return (
@@ -38,5 +50,5 @@ export default async function Home() {
     )
   }
 
-  return <HomeUI data={projects} heroUrl={imageUrl} />
+  return <HomeUI data={projects} heroImage={heroImage} />
 }
