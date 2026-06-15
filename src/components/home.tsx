@@ -14,8 +14,8 @@ export default function HomeUI({ data, heroUrl }: { data: Project[]; heroUrl: st
         <div className="flex w-screen justify-center items-center">
           <Image
             src={heroUrl}
-            width={200}
-            height={200}
+            width={2000}
+            height={2000}
             preload={true}
             className="h-[80vh] md:h-[95vh] w-auto absolute bottom-0"
             alt="Saumya Talwani"
