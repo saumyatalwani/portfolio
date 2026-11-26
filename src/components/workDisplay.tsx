@@ -2,8 +2,7 @@
 import Navbar from '@/components/custom/navbar'
 import { Menu } from 'lucide-react'
 import { LayoutGrid } from 'lucide-react'
-import { useScreenSize } from '@/components/custom/useScreenSize'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
 
@@ -11,9 +10,8 @@ import { useRouter } from 'next/navigation'
 import { Project } from '@/payload-types'
 
 export default function Display({ data }: { data: Project[] }) {
-  const [projects, setProjects] = useState(data)
-
-  const types = [...new Set(projects.map((project) => project.type))]
+  // Categories come from all projects, not the filtered list, so picking one doesn't hide the others.
+  const types = [...new Set(data.map((project) => project.type))]
 
   const router = useRouter()
 
@@ -21,27 +19,21 @@ export default function Display({ data }: { data: Project[] }) {
     router.push(`/work/${slug}`) // Navigate to the desired page
   }
 
-  const size = useScreenSize()
-  const [view, setView] = useState('')
-
-  useEffect(() => {
-    if (size == 'xs' || size == 'sm') setView('gallery')
-    else setView('list')
-  }, [size])
+  // null = not chosen yet: CSS picks gallery on mobile and list on desktop, so the
+  // server-rendered HTML already contains the cards before any JS runs.
+  const [view, setView] = useState<'list' | 'gallery' | null>(null)
   const [filter, setFilter] = useState('all')
-
-  useEffect(() => {
-    if (filter != 'all')
-      setProjects(data.filter((projects) => projects.type!.toLowerCase().includes(filter)))
-    else setProjects(data)
-  }, [filter])
+  const projects =
+    filter == 'all' ? data : data.filter((project) => project.type?.toLowerCase().includes(filter))
 
   const CategoryPill = ({ category }: { category: string }) => {
     const cat = category.toLowerCase()
     return (
-      <div
+      <button
+        type="button"
+        aria-pressed={filter == cat}
         className={clsx(
-          'font-saumyaSans text-sm md:text-base rounded-[4rem] p-5 w-[16rem] md:w-48 flex justify-center items-center my-10 cursor-pointer mr-2 md:mr-5',
+          'font-saumyaSans text-sm md:text-base rounded-[4rem] py-4 px-7 md:p-5 md:w-48 whitespace-nowrap flex justify-center items-center my-10 cursor-pointer mr-2 md:mr-5',
           filter != cat &&
             'border-[#d7d7d8] border hover:bg-[#455ce9] hover:text-white hover:border-[#455ce9]',
           filter == cat && 'bg-black text-white',
@@ -49,7 +41,7 @@ export default function Display({ data }: { data: Project[] }) {
         onClick={() => setFilter(cat)}
       >
         {category}
-      </div>
+      </button>
     )
   }
 
@@ -75,9 +67,9 @@ export default function Display({ data }: { data: Project[] }) {
               <div
                 className={clsx(
                   'font-saumyaSans rounded-full p-5 flex justify-center items-center my-10 cursor-pointer mr-5 size-15',
-                  view != 'list' &&
+                  view == 'gallery' &&
                     'border border-[#d7d7d8] hover:bg-[#455ce9] hover:text-white hover:border-[#455ce9]',
-                  view == 'list' && 'bg-black text-white',
+                  view != 'gallery' && 'bg-black text-white',
                 )}
                 onClick={() => setView('list')}
               >
@@ -102,11 +94,12 @@ export default function Display({ data }: { data: Project[] }) {
           className={clsx(
             view == 'list' && 'px-[9vw] md:px-[18vw]',
             view == 'gallery' && 'px-[6vw]',
+            view == null && 'px-[6vw] md:px-[18vw]',
             'w-screen',
           )}
         >
-          {view == 'list' ? (
-            <div className="w-[64vw] mt-5 font-saumyaSans">
+          {view != 'gallery' ? (
+            <div className={clsx('w-[64vw] mt-5 font-saumyaSans', view == null && 'hidden md:block')}>
               <table className="workTable">
                 <thead>
                   <tr>
@@ -135,8 +128,8 @@ export default function Display({ data }: { data: Project[] }) {
               </table>
             </div>
           ) : null}
-          {view == 'gallery' ? (
-            <div className="w-[88vw] mt-5 font-saumyaSans">
+          {view != 'list' ? (
+            <div className={clsx('w-[88vw] mt-5 font-saumyaSans', view == null && 'md:hidden')}>
               <div className="flex flex-wrap gallery justify-center items-center">
                 {projects.map((project, index) => {
                   return (

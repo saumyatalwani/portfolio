@@ -125,6 +125,82 @@
   text-decoration: none;
 }
 
+.myContent :is(h1, h2, h3, h4, h5, h6) {
+  @apply font-generalSans font-medium tracking-tight text-left;
+  line-height: 1.2;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+.myContent h1 {
+  @apply text-4xl md:text-5xl;
+}
+
+.myContent h2 {
+  @apply text-3xl md:text-4xl;
+}
+
+.myContent h3 {
+  @apply text-2xl md:text-3xl;
+}
+
+.myContent h4 {
+  @apply text-xl md:text-2xl;
+}
+
+.myContent h5 {
+  @apply text-lg md:text-xl;
+}
+
+.myContent h6 {
+  @apply text-base md:text-lg;
+}
+
+.myContent :is(ul, ol) {
+  padding-left: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.myContent ul {
+  list-style-type: disc;
+}
+
+.myContent ol {
+  list-style-type: decimal;
+}
+
+.myContent :is(ul, ol) :is(ul, ol) {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.myContent ul ul {
+  list-style-type: circle;
+}
+
+.myContent ol ol {
+  list-style-type: lower-alpha;
+}
+
+.myContent li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.myContent li::marker {
+  color: #8d8d8f;
+}
+
+/* Lexical wraps nested lists in an extra li — hide its marker */
+.myContent li:has(> :is(ul, ol):only-child) {
+  list-style-type: none;
+}
+
+.myContent > :first-child {
+  margin-top: 0;
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

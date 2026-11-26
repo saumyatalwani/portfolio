@@ -3,7 +3,19 @@ import Image, { ImageProps } from 'next/image'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { ReactNode, cache } from 'react'
-import { RichText } from '@payloadcms/richtext-lexical/react'
+import { RichText, type JSXConvertersFunction } from '@payloadcms/richtext-lexical/react'
+
+// Code blocks (BlocksFeature + CodeBlock in payload.config.ts) need their own renderer.
+const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
+  ...defaultConverters,
+  blocks: {
+    Code: ({ node }: { node: { fields: { code?: string } } }) => (
+      <pre className="my-6 overflow-x-auto rounded-lg bg-neutral-900 p-4 text-left text-sm leading-relaxed text-neutral-100">
+        <code>{node.fields.code}</code>
+      </pre>
+    ),
+  },
+})
 
 export const getProject = cache(async (slug: string) => {
   const payload = await getPayload({ config })
@@ -123,7 +135,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           </table>
         </div>
         <div className="myContent mt-10 font-noto font-light text-justify">
-          <RichText data={project.content!} />
+          <RichText converters={converters} data={project.content!} />
         </div>
       </div>
     </>

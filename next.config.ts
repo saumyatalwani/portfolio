@@ -8,6 +8,9 @@ const dirname = path.dirname(__filename)
 
 const nextConfig: NextConfig = {
   images: {
+    // Payload serves media with max-age=0, so without this the optimized images are
+    // only cached ~60s and nearly every visit re-runs optimizer -> Payload -> R2 (2-3s+).
+    minimumCacheTTL: 60 * 60 * 24 * 30,
     localPatterns: [
       {
         pathname: '**', //'/api/media/file/**'

@@ -6,6 +6,21 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import { ExperienceTimeline } from '@/components/custom/experienceTimeline'
 
+// LinkedIn-style tenure: both the start and end months count, so Jan–Jun is "6 mos".
+// UTC month is used because Payload stores dates at midday, which is the same calendar day in any timezone.
+function formatTenure(start: Date, end: Date) {
+  const months =
+    (end.getUTCFullYear() - start.getUTCFullYear()) * 12 +
+    (end.getUTCMonth() - start.getUTCMonth()) +
+    1
+  if (months < 1) return ''
+  const years = Math.floor(months / 12)
+  const rest = months % 12
+  return [years && `${years} yr${years > 1 ? 's' : ''}`, rest && `${rest} mo${rest > 1 ? 's' : ''}`]
+    .filter(Boolean)
+    .join(' ')
+}
+
 export default async function About() {
   let imageUrl = ''
   try {
@@ -72,6 +87,7 @@ export default async function About() {
               return {
                 role: roleDoc.role,
                 duration: duration,
+                durationLength: startDate ? formatTenure(startDate, endDate ?? new Date()) : '',
                 description: roleDoc.description,
                 employmentType: roleDoc.employmentType,
                 location: roleDoc.location,

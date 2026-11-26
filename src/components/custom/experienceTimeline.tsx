@@ -6,6 +6,7 @@ import { RichText } from '@payloadcms/richtext-lexical/react'
 interface Role {
   role: string
   duration: string
+  durationLength?: string
   description: any // RichText data
   employmentType?: string
   location?: string
@@ -82,9 +83,14 @@ export const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ companie
                               )}
                             </div>
 
-                            <span className="text-lg whitespace-nowrap shrink-0">
-                              {role.duration}
-                            </span>
+                            <div className="flex flex-col md:items-end shrink-0">
+                              <span className="text-lg whitespace-nowrap">{role.duration}</span>
+                              {role.durationLength && (
+                                <span className="text-base text-slate-500 whitespace-nowrap">
+                                  {role.durationLength}
+                                </span>
+                              )}
+                            </div>
                           </div>
 
                           {role.description && (
